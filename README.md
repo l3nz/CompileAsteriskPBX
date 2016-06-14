@@ -19,7 +19,8 @@ This also comes in handy if you:
 * Are building a docker image. By running a single script, all changes go to a single layer.
 * Are installing a box using some automated tool, e.g. ansible.
 
-Based upon https://github.com/leifmadsen/certified-asterisk
+Based upon https://github.com/leifmadsen/certified-asterisk . You may also
+want to check https://github.com/asterisk/asterisk/tree/master/contrib/docker .
 
 Patches for different versions of Asterisk and different OS are welcome.
 
