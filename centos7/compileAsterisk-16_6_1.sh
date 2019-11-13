@@ -26,15 +26,13 @@ DEV_PKG_LIST="automake \
     neon-devel \
     jansson-devel \
     libsrtp-devel \
-    pjproject-devel \
     libxslt-devel \
     libuuid-devel \
     gsm-devel \
     gmime-devel \
-    iksemel-devel \
     svn"
 
-RUN_PKG_LIST="neon unixODBC vorbis gmime iksemel"
+RUN_PKG_LIST="neon unixODBC vorbis gmime"
 
 
 # install dependencies
