@@ -109,7 +109,9 @@ mkdir __build__
 cd __build__
 cmake -DLWS_MAX_SMP=1 \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
-      -DCMAKE_C_FLAGS="-fpic" ..
+      -DLIB_SUFFIX=64 \
+      -DCMAKE_C_FLAGS="-fpic" \
+      ..
 make && make install
 
 
