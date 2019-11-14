@@ -8,9 +8,8 @@ Compiles and installs Janus on a clean CentOS 7 system.
 
 Usage:
 
-	wget 
-	chmod a+x 
-	./...
+	wget -O- https://raw.githubusercontent.com/l3nz/CompileAsteriskPBX/master/centos7/compileJanus-current.sh | bash
+
 
 After a while... you can start Janus:
 
