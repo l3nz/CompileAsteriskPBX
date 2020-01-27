@@ -37,6 +37,7 @@ LIBNICE_PKG=libnice_${LIBNICE_TAG}
 
 
 DEV_PKG_LIST="pkgconfig \
+			git \
 			gengetopt \
 			libconfig-devel \
 			libtool \
