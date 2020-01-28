@@ -1,8 +1,11 @@
-
+#! /bin/bash
+#
+# A script to compile and install the Janus WebRTC Gateway
+# and its main dependencies on a CentOS 7+ system.
+#
 
 JANUS_DIR=/opt/janus
 TARGET_DIR=/usr/src/
-
 
 JANUS_TAG=master
 JANUS_GIT=https://github.com/meetecho/janus-gateway.git
@@ -78,6 +81,7 @@ mkdir -p $TARGET_DIR
 # Non-packaged deps
 #
 
+# Sofia
 
 cd $TARGET_DIR
 wget ${SOFIA_URL}
@@ -87,6 +91,7 @@ cd ${SOFIA_PKG}
 make && make install
 
 
+# libsrtp
 
 cd $TARGET_DIR
 rm -rf ${LIBSRTP_TGZ} ${LIBSRTP_PKG}
@@ -96,6 +101,7 @@ cd ${LIBSRTP_PKG}
 ./configure --enable-openssl --libdir=/usr/lib64
 make shared_library && make install
 
+# usrsctp
 
 cd $TARGET_DIR
 git clone --branch=${USRSCTP_TAG} ${USRSCTP_GIT} ./${USRSCTP_PKG} 
@@ -104,6 +110,7 @@ cd ./${USRSCTP_PKG}
 ./configure --libdir=/usr/lib64
 make && make install
 
+# libwebsocket
 
 cd $TARGET_DIR
 git clone --branch=${LIBWEBSOCK_TAG} ${LIBWEBSOCK_GIT} ./${LIBWEBSOCK_PKG}
@@ -118,12 +125,15 @@ cmake -DLWS_MAX_SMP=1 \
 make && make install
 
 
+# ffmepg
+
 cd $TARGET_DIR
 git clone --branch=${FFMPEG_TAG} ${FFMPEG_GIT} ./${FFMPEG_PKG}
 cd ${FFMPEG_PKG}
 ./configure --disable-programs --libdir=/usr/lib64
 make && make install
 
+# libnice
 
 cd $TARGET_DIR
 git clone --branch=${LIBNICE_TAG} ${LIBNICE_GIT} ./${LIBNICE_PKG}
