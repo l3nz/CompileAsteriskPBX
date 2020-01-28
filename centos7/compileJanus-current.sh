@@ -22,8 +22,10 @@ USRSCTP_TAG=master
 USRSCTP_GIT=https://github.com/sctplab/usrsctp
 USRSCTP_PKG=usrsctp_${USRSCTP_TAG}
 
+# The GitHub mirror is more reliable
 LIBWEBSOCK_TAG=master
-LIBWEBSOCK_GIT=https://libwebsockets.org/repo/libwebsockets
+#LIBWEBSOCK_GIT=https://libwebsockets.org/repo/libwebsockets
+LIBWEBSOCK_GIT=https://github.com/warmcat/libwebsockets.git
 LIBWEBSOCK_PKG=libwebsockets_${LIBWEBSOCK_TAG}
 
 FFMPEG_TAG=master
